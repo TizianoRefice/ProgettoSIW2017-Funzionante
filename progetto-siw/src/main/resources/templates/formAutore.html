@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link href="css/riepilogo.css" rel="stylesheet" media="screen" />
+<meta charset="ISO-8859-1">
+<style>
+form { text-align: center;
+	margin-top: 400px;}
+span{ margin: 10px;}
+
+</style>
+<title>Inserimento Autore</title>
+</head>
+<body>
+	<form action="#" th:action="@{/autore}" th:object="${autore}"
+		method="post">
+		<input type="hidden" th:field="*{id}" />
+		<div>
+			<div>
+				<span th:text="#{label.nome}">Nome: </span> <span><input
+					type="text" th:field="*{nome}" /></span> <span
+					th:if="${#fields.hasErrors('nome')}"
+					th:text="#{label.obbligatorio}">Error</span>
+			</div>
+			<div>
+				<span th:text="#{label.cognome}">Cognome: </span> <span><input
+					type="text" th:field="*{cognome}" /></span> <span
+					th:if="${#fields.hasErrors('cognome')}"
+					th:text="#{label.obbligatorio}">Error</span>
+			</div>
+			<div>
+				<span th:text="#{label.nazionalita}">Nazionalità: </span> <span><input
+					type="text" th:field="*{nazionalita}" /></span>
+			</div>
+			<div>
+				<span th:text="#{label.dataNascita}">Data di Nascita: </span> <span><input
+					type="date" th:field="*{dataNascita}" /></span> <span
+					th:if="${#fields.hasErrors('dataNascita')}" th:text="#{label.data}"></span>
+			</div>
+			<div>
+				<span th:text="#{label.dataMorte}">Data di Morte: </span> <span><input
+					type="date" th:field="*{dataMorte}" /></span> <span
+					th:if="${#fields.hasErrors('dataNascita')}" th:text="#{label.data}"></span>
+			</div>
+			<div>
+				<span><button type="submit">Invia</button></span>
+			</div>
+			<div>
+				<a href="/">Torna all'Homepage</a>
+			</div>
+		</div>
+		
+	</form>
+</body>
+</html>
+
+

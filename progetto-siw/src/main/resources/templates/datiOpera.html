@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link href="css/riepilogo.css" rel="stylesheet" media="screen" />
+<meta charset="ISO-8859-1">
+<style>
+h1 { text-align: center;
+	 margin-top:400px;}
+div { text-align: center;}
+</style>
+<title>Dati Opera</title>
+</head>
+<body>
+	<h1>Dati opera</h1>
+	<div>
+		<p th:text="#{label.titolo} + ${opera.titolo}" />
+	
+		<p th:text="#{label.anno} + ${opera.anno}" />
+	
+		<p th:text="#{label.tecnica} + ${opera.tecnica}" />
+	
+		<p th:text="#{label.lunghezza} + ${opera.lunghezza}" />
+	
+		<p th:text="#{label.larghezza} + ${opera.larghezza}" />
+	
+		<p th:text="#{label.autore} + ${opera.autore.nome}" />
+		<p>
+		<a href="/">Torna all'Homepage</a>
+		</p>
+	</div>
+</body>
+</html>

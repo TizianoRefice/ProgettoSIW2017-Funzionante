@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link href="css/riepilogo.css" rel="stylesheet" media="screen" />
+<meta charset="ISO-8859-1">
+<style>
+div { text-align: center;
+	margin-top: 400px;}
+</style>
+<title>Dati Autore</title>
+</head>
+<body>
+<div>
+		<p th:text="#{label.nome} + ${autore.nome}" />
+	
+		<p th:text="#{label.cognome} + ${autore.cognome}" />
+	
+		<p th:text="#{label.nazionalita} + ${autore.nazionalita}" />
+	
+		<p th:text="#{label.dataNascita} + ${autore.dataNascita}" />
+	
+		<p th:text="#{label.dataMorte} + ${autore.dataMorte}" />
+	</div>
+
+</body>
+</html>

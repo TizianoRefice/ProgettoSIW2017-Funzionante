@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link href="css/riepilogo.css" rel="stylesheet" media="screen" />
+<meta charset="ISO-8859-1">
+<style>
+div { text-align: center;
+	margin-top: 400px;}
+</style>
+<title>Lista Autori</title>
+</head>
+<body>
+	<div th:each="autore : ${autori}">
+		<a th:href="@{autori/}+${autore.id}"
+			th:text="${autore.nome}+${autore.cognome}">Nome e Cognome</a>
+		<div sec:authorize="hasRole('ROLE_ADMIN')">
+			<form th:action="@{autore/}+${autore.id}" th:method="delete">
+				<input type="submit" value="cancella" />
+			</form>
+		</div>
+	</div>
+	<div>
+		<a href="/">Torna all'Homepage</a>
+	</div>
+</body>
+</html>
