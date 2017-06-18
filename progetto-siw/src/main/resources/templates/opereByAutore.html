@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<link href="css/riepilogo.css" rel="stylesheet" media="screen" />
+<meta charset="ISO-8859-1">
+<style>
+#lista { text-align: center;
+	margin-top: 400px;}
+#torna{ text-align: center;
+	margin-bottom: 100px;}
+#elemento{text-align: center;
+	margin: 50px}
+</style>
+<title>Lista Opere Per Autore</title>
+</head>
+<body>
+	<div id="lista" th:each="opera : ${opereByAutore}">
+		<a th:href="@{opere/}+${opera.id}" th:text="${opera.titolo}">Titolo</a>
+	</div>
+	<div id="torna">
+		<a href="/">Torna all'Homepage</a>
+	</div>
+</body>
+</html>

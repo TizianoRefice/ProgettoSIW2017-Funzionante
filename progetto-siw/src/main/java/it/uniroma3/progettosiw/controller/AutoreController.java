@@ -68,13 +68,16 @@ public class AutoreController {
 		return "listaAutoriUtente";
 	}
 	
+	@GetMapping("/listaAutoriPerOpere")
+	public String autoriPerOpere(Model model) {
+		model.addAttribute("autori", this.autoreService.findAll());
+		return "listaAutoriPerOpere";
+	}
+	
 	@GetMapping("/opereByAutore")
-	public String opereByAutore(Model model) {
-		List<Autore> autori = (List<Autore>) this.autoreService.findAll();
-		for(Autore autore: autori) {
-			model.addAttribute(autore);
-			model.addAttribute("opereByAutore", autore.getOpereRealizzate());
-		}
-		return "listaOpereByAutore";
+	public String opereByAutore(@PathVariable Long id, Model model) {
+		Autore autore = this.autoreService.findById(id);
+		model.addAttribute("opereByAutore", autore.getOpereRealizzate());
+		return "opereByAutore";
 	}
 }
