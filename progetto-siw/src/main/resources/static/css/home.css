@@ -1,6 +1,7 @@
 body{
-	background-image: url("galleria3.jpg");		
+	background-image: url("galleria4.jpg");		
 }
+
 
 .thumbnail {
 	
@@ -29,8 +30,4 @@ body{
 .btn:hover{ 
 	background-color: #E87D20;
 }
-
-
-
-
 
