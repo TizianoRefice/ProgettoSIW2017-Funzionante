@@ -26,6 +26,10 @@ div { text-align: center;}
 		<p th:text="#{label.lunghezza} + ${opera.lunghezza}" />
 	
 		<p th:text="#{label.larghezza} + ${opera.larghezza}" />
+		
+		<p>
+		<a href="${opera.sito}">Maggiori informazioni</a>
+		</p>
 	
 		<p th:text="#{label.autore} + ${opera.autore}" />
 		<p>

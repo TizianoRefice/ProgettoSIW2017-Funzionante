@@ -45,6 +45,11 @@ span{ margin: 10px;}
 					th:if="${#fields.hasErrors('larghezza')}" th:text="#{label.numero}"></span>
 			</div>
 			<div>
+				<span th:text="#{label.sito}">Sito: </span> <span><input
+					type="text" th:field="*{sito}" /></span> <span
+					th:if="${#fields.hasErrors('sito')}" th:text="#{label.sito}"></span>
+			</div>
+			<div>
 				<span th:text="#{label.autore}">Autore: </span> <span><input
 					type="text" th:field="*{autore}" /></span> <span
 					th:if="${#fields.hasErrors('autore')}"

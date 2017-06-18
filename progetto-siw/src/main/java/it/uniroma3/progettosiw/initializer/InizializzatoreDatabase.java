@@ -23,13 +23,13 @@ public class InizializzatoreDatabase  implements ApplicationRunner {
 	
 	@Override
 	public void run(ApplicationArguments arg0) throws Exception {
-		Opera operaTest1 = new Opera("titoloOpera1", 100, "tecnicaOpera1", 10, 20);
-		Opera operaTest2 = new Opera("titoloOpera2", 200, "tecnicaOpera2", 20, 40);
-		Opera operaTest3 = new Opera("titoloOpera3", 300, "tecnicaOpera3", 30, 60);
+		Opera operaTest1 = new Opera("Nascita di Venere", 1485, "Rinascimentale", 172, 278, "https://it.wikipedia.org/wiki/Nascita_di_Venere");
+		Opera operaTest2 = new Opera("Primavera", 1482, "Rinascimentale", 203, 314, "https://it.wikipedia.org/wiki/Primavera_(Botticelli)");
+		Opera operaTest3 = new Opera("Ultima Cena", 1498, "Rinascimentale", 460, 880, "https://it.wikipedia.org/wiki/Ultima_Cena_(Leonardo)");
 		
 		DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
-		Autore autoreTest1 = new Autore("nomeAutore1", "cognomeAutore1", "nazionalita1", format.parse("01-01-2001") , format.parse("02-02-2002"));
-		Autore autoreTest2 = new Autore("nomeAutore2", "cognomeAutore2", "nazionalita2", format.parse("03-03-2003") , format.parse("04-04-2004"));
+		Autore autoreTest1 = new Autore("Sandro", "Botticelli", "Italiano", format.parse("01-03-1445") , format.parse("17-05-1510"));
+		Autore autoreTest2 = new Autore("Leonardo", "da Vinci", "Italiano", format.parse("15-04-1452") , format.parse("02-05-1519"));
 		
 		operaTest1.setAutore(autoreTest1);
 		operaTest2.setAutore(autoreTest1);

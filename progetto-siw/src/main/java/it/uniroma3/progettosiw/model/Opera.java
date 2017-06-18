@@ -22,17 +22,19 @@ public class Opera {
 	private String tecnica;
 	private int lunghezza;
 	private int larghezza;
+	private String sito;
 	@ManyToOne
 	private Autore autore;
 	
 	protected Opera(){}
 
-	public Opera (String titolo, int anno, String tecnica, int lunghezza, int larghezza){
+	public Opera (String titolo, int anno, String tecnica, int lunghezza, int larghezza, String sito) {
 		this.titolo = titolo;
 		this.anno = anno;
 		this.tecnica = tecnica;
 		this.lunghezza = lunghezza;
 		this.larghezza = larghezza;
+		this.sito = sito;
 	}
 
 	public Long getId() {
@@ -91,5 +93,12 @@ public class Opera {
 		this.autore = autore;
 	}
 
+	public String getSito() {
+		return sito;
+	}
+
+	public void setSito(String sito) {
+		this.sito = sito;
+	}
 
 }
