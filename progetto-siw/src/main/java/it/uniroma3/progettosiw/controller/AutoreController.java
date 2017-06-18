@@ -72,8 +72,8 @@ public class AutoreController {
 	public String opereByAutore(Model model) {
 		List<Autore> autori = (List<Autore>) this.autoreService.findAll();
 		for(Autore autore: autori) {
-			List<Opera> opereByAutore = autore.getOpereRealizzate();
-			model.addAttribute("opereByAutore", opereByAutore);
+			model.addAttribute(autore);
+			model.addAttribute("opereByAutore", autore.getOpereRealizzate());
 		}
 		return "listaOpereByAutore";
 	}
