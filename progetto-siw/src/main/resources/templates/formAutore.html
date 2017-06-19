@@ -8,53 +8,162 @@
 <link href="css/riepilogo.css" rel="stylesheet" media="screen" />
 <meta charset="ISO-8859-1">
 <style>
-form { text-align: center;
-	margin-top: 400px;}
-span{ margin: 10px;}
-
+form {
+	text-align: center;
+}
+#torna {text-align: center;}
 </style>
 <title>Inserimento Autore</title>
 </head>
 <body>
-	<form action="#" th:action="@{/autore}" th:object="${autore}"
-		method="post">
-		<input type="hidden" th:field="*{id}" />
-		<div>
-			<div>
-				<span th:text="#{label.nome}">Nome: </span> <span><input
-					type="text" th:field="*{nome}" /></span> <span
-					th:if="${#fields.hasErrors('nome')}"
-					th:text="#{label.obbligatorio}">Error</span>
+	<!----inizio navbar--->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!--- area bottone mobile display --->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<!--fine area bottone mobile display-->
+				<a class="navbar-brand" href="/">New Art Gallery</a>
 			</div>
-			<div>
-				<span th:text="#{label.cognome}">Cognome: </span> <span><input
-					type="text" th:field="*{cognome}" /></span> <span
-					th:if="${#fields.hasErrors('cognome')}"
-					th:text="#{label.obbligatorio}">Error</span>
+			<!--- collect the nav links, forms, and other content for toggling --->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/login">Accedi o Registrati <span
+							class="sr-only">(current)</span></a></li>
+					<!-- <li><a href="/">Logout</a></li>  -->
+					<!--bottone dropdown
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">action</a></li>
+								<li><a href="#">another action</a></li>
+								<li><a href="#">something else here</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#">separated link</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#">one more separated link</a></li>
+							</ul>
+						</li> -->
+				</ul>
+				<!---navbar-right--->
+				<ul class="nav navbar-nav navbar-right">
+					<!--  <li><a href="#">link</a></li> -->
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Per chi si vuole evolgere <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Opere Monocromatiche</a></li>
+							<li><a href="#">Concetti di sedialità</a></li>
+							<li><a href="#">Immanenza e trascendenza</a></li>
+							<!-- <li role="separator" class="divider"></li>
+									<li><a href="#">separated link</a></li>  -->
+						</ul></li>
+					<!---form cerca---->
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="search">
+						</div>
+						<button type="submit" class="btn btn-success">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						</button>
+					</form>
+				</ul>
 			</div>
-			<div>
-				<span th:text="#{label.nazionalita}">Nazionalità: </span> <span><input
-					type="text" th:field="*{nazionalita}" /></span>
-			</div>
-			<div>
-				<span th:text="#{label.dataNascita}">Data di Nascita: </span> <span><input
-					type="date" th:field="*{dataNascita}" /></span> <span
-					th:if="${#fields.hasErrors('dataNascita')}" th:text="#{label.data}"></span>
-			</div>
-			<div>
-				<span th:text="#{label.dataMorte}">Data di Morte: </span> <span><input
-					type="date" th:field="*{dataMorte}" /></span> <span
-					th:if="${#fields.hasErrors('dataNascita')}" th:text="#{label.data}"></span>
-			</div>
-			<div>
-				<span><button type="submit">Invia</button></span>
-			</div>
-			<div>
+		</div>
+	</nav>
+	<!---fine navbar--->
+
+	<div class="container">
+		<div class="jumbotron">
+			<form action="#" th:action="@{/autore}" th:object="${autore}"
+				method="post">
+				<input type="hidden" th:field="*{id}" />
+				<fieldset>
+					<div class="form-group">
+						<label for="nome" class="col-sm-2 col-lg-2 control-label">Nome</label>
+						<div class="col-sm5 col-lg-2">
+							<input type="text" class="form-control" id="nome"
+								placeholder="Inserisci il nome..." th:field="*{nome}" />
+						</div>
+						<div>
+							<span th:if="${#fields.hasErrors('nome')}"
+								th:text="#{label.obbligatorio}">Error </span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="cognome" class="col-sm-2 col-lg-2 control-label">Cognome</label>
+						<div class="col-sm5 col-lg-2">
+							<input type="text" class="form-control" id="cognome"
+								placeholder="Inserisci il cognome..." th:field="*{cognome}" />
+						</div>
+						<div>
+							<span th:if="${#fields.hasErrors('cognome')}"
+								th:text="#{label.obbligatorio}">Error </span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="nazionalita" class="col-sm-2 col-lg-2 control-label">Nazionalità</label>
+						<div class="col-sm5 col-lg-2">
+							<input type="text" class="form-control" id="nazionalita"
+								placeholder="Inserisci la nazionalità..."
+								th:field="*{nazionalita}" />
+						</div>
+						<div>
+							<span th:if="${#fields.hasErrors('nazionalita')}"
+								th:text="#{label.obbligatorio}">Error </span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="dataNascita" class="col-sm-2 col-lg-2 control-label">Data
+							di Nascita</label>
+						<div class="col-sm5 col-lg-2">
+							<input type="text" class="form-control" id="dataNascita"
+								placeholder="Inserisci la data di nascita..."
+								th:field="*{dataNascita}" />
+						</div>
+						<div>
+							<span th:if="${#fields.hasErrors('dataNascita')}"
+								th:text="#{label.data}">Error </span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="dataMorte" class="col-sm-2 col-lg-2 control-label">Data
+							di Morte</label>
+						<div class="col-sm5 col-lg-2">
+							<input type="text" class="form-control" id="dataMorte"
+								placeholder="Inserisci la data di morte..."
+								th:field="*{dataMorte}" />
+						</div>
+						<div>
+							<span th:if="${#fields.hasErrors('dataMorte')}"
+								th:text="#{label.data}">Error </span>
+						</div>
+						<div>
+							<span><button type="submit">Invia</button></span>
+						</div>
+					</div>
+
+				</fieldset>
+			</form>
+			<div id="torna">
 				<a href="/">Torna all'Homepage</a>
 			</div>
 		</div>
-		
-	</form>
+
+	</div>
+
 </body>
 </html>
 

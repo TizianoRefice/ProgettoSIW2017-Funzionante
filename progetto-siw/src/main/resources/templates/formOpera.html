@@ -9,101 +9,198 @@
 <meta charset="ISO-8859-1">
 
 <style>
-form{ text-align: center; margin-top: 400px;}
-span{ margin: 10px;}
-div{ text-align: center;}
-body{ text-align: center;}
+#inserimento {
+	max-height: none;
+	max-width: none;
+	overflow: visible;
+}
 
+fieldset {
+	text-align: center;
+}
+
+#inserimento {
+	max-height: auto;
+}
 </style>
 <title>Inserimento Opera</title>
 </head>
 
 <body>
-	<form class="form-horizontal" action="#" th:action="@{/opera}" 
-		th:object="${opera}" method="post">
-		<input type="hidden" th:field="*{id}" />
-		<fieldset>
-			<div class="form-group">
-   				<label for="titolo" class="col-sm-2 col-lg-2 control-label">Titolo</label>
-  				<div class="col-sm-5 col-lg-2">
-  					<input type="text" class="form-control" id="titolo" 
-  						placeholder="Inserisci il titolo..." th:field="*{titolo}"/>
-   				</div>
-   				<div>
-   					<span th:if="${#fields.hasErrors('titolo')}"
-						th:text="#{label.obbligatorio}">Error
-					</span>
-				</div>		
-   			</div>
-   				
-   			<div class="form-group">
-   				<label for="anno" class="col-sm-2 col-lg-2 control-label">Anno</label>
-   				<div class="col-sm-5 col-lg-2">
-   					<p>	<input type="number" class="form-control" id="anno" 
-   						placeholder="Inserisci l'anno..." th:field="*{anno}"/>
-   						</div>
-   						<div>
-   							<span th:if="${#fields.hasErrors('anno')}"
-								  th:text="#{label.obbligatorio}">Error
-							</span>
-					</p>
-						
-   			</div>
-   				
-   			<div class="form-group">
-   				<label for="tecnica" class="col-sm-2 col-lg-2 control-label">Tecnica</label>
-   				<div class="col-sm-5 col-lg-2">
-   					<input type="text" class="form-control" id="tecnica" 
- 						placeholder="Inserisci la tecnica..." th:field="*{tecnica}"/>
-				</div>
-   			</div>
-   				
-   			<div class="form-group">
-   				<label for="lunghezza" class="col-sm-2 col-lg-2 control-label">Lunghezza</label>
-   				<div class="col-sm-5 col-lg-2">
-   					<input type="text" class="form-control" id="lunghezza" 
-   						placeholder="Inserisci la lunghezza..." th:field="*{lunghezza}"/>
-   				</div>
-   			</div>
-   	
-   			<div class="form-group">
-   				<label for="larghezza" class="col-sm-2 col-lg-2 control-label">Larghezza</label>
-   				<div class="col-sm-5 col-lg-2">
-   					<input type="text" class="form-control" id="larghezza" 
-   						placeholder="Inserisci la larghezza..." th:field="*{larghezza}"/>
-   				</div>
-   			</div>
-   			
-   			<div class="form-group">
-   				<label for="sito" class="col-sm-2 col-lg-2 control-label">Sito</label>
-   				<div class="col-sm-5 col-lg-2">
-   					<input type="text" class="form-control" id="sito" 
-   						placeholder="Inserisci il sito..." th:field="*{sito}"/>
-   				</div>
-   			</div>
-   				
-   			<div class="form-group">
-   				<label for="autore" class="col-sm-2 col-lg-2 control-label">Autore</label>
-   				<div class="col-sm-5 col-lg-2">
-   					<input type="text" class="form-control" id="autore" 
-   						placeholder="Inserisci l'autore..." th:field="*{autore}"/>
-   				</div>
-   				<div>
-   					<span th:if="${#fields.hasErrors('autore')}"
-							th:text="#{label.obbligatorio}">Error
-					</span>
-				</div>		
-   			</div>
-   			
-   			<div class="form-group">
-   				<div class="col-sm-2 col-lg-2 col-sm-offset-2">
-   					<button type="submit" class="btn btn-default">Invia</button>
-   				</div>
-   			</div>
- 		</fieldset>
-	</form>
-   	
-   	<a href="/">Torna all'Homepage</a>
+	<!----inizio navbar--->
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!--- area bottone mobile display --->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+					aria-expanded="false">
+					<span class="sr-only">toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<!--fine area bottone mobile display-->
+				<a class="navbar-brand" href="/">New Art Gallery</a>
+			</div>
+			<!--- collect the nav links, forms, and other content for toggling --->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="/login">Accedi o Registrati <span
+							class="sr-only">(current)</span></a></li>
+					<!-- <li><a href="/">Logout</a></li>  -->
+					<!--bottone dropdown
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">dropdown <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">action</a></li>
+								<li><a href="#">another action</a></li>
+								<li><a href="#">something else here</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#">separated link</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="#">one more separated link</a></li>
+							</ul>
+						</li> -->
+				</ul>
+				<!---navbar-right--->
+				<ul class="nav navbar-nav navbar-right">
+					<!--  <li><a href="#">link</a></li> -->
+					<li class="dropdown"><a href="#" class="dropdown-toggle"
+						data-toggle="dropdown" role="button" aria-haspopup="true"
+						aria-expanded="false">Per chi si vuole evolgere <span
+							class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#">Opere Monocromatiche</a></li>
+							<li><a href="#">Concetti di sedialità</a></li>
+							<li><a href="#">Immanenza e trascendenza</a></li>
+							<!-- <li role="separator" class="divider"></li>
+									<li><a href="#">separated link</a></li>  -->
+						</ul></li>
+					<!---form cerca---->
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="search">
+						</div>
+						<button type="submit" class="btn btn-success">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						</button>
+					</form>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!---fine navbar--->
+
+	<div id="inserimento" class="container">
+		<div class="jumbotron">
+			<form class="form-horizontal" action="#" th:action="@{/opera}"
+				th:object="${opera}" method="post">
+				<input type="hidden" th:field="*{id}" />
+				<fieldset>
+					<div class="form-group">
+						<label for="titolo" class="col-sm-2 col-lg-2 control-label">Titolo</label>
+						<div class="col-sm-5 col-lg-2">
+							<input type="text" class="form-control" id="titolo"
+								placeholder="Inserisci il titolo..." th:field="*{titolo}" />
+						</div>
+						<div>
+							<span th:if="${#fields.hasErrors('titolo')}"
+								th:text="#{label.obbligatorio}">Error </span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="anno" class="col-sm-2 col-lg-2 control-label">Anno</label>
+						<div class="col-sm-5 col-lg-2">
+							<div>
+								<input type="number" class="form-control" id="anno"
+									placeholder="Inserisci l'anno..." th:field="*{anno}" />
+							</div>
+						</div>
+						<div>
+							<span th:if="${#fields.hasErrors('anno')}"
+								th:text="#{label.obbligatorio}">Error </span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="tecnica" class="col-sm-2 col-lg-2 control-label">Tecnica</label>
+						<div class="col-sm-5 col-lg-2">
+							<div>
+								<input type="text" class="form-control" id="tecnica"
+									placeholder="Inserisci la tecnica..." th:field="*{tecnica}" />
+							</div>
+						</div>
+						<div>
+							<span th:if="${#fields.hasErrors('tecnica')}"
+								th:text="#{label.obbligatorio}">Error </span>
+						</div>
+					</div>
+
+
+					<div class="form-group">
+						<label for="lunghezza" class="col-sm-2 col-lg-2 control-label">Lunghezza</label>
+						<div class="col-sm-5 col-lg-2">
+							<input type="text" class="form-control" id="lunghezza"
+								placeholder="Inserisci la lunghezza..." th:field="*{lunghezza}" />
+						</div>
+					</div>
+					<div>
+						<span th:if="${#fields.hasErrors('lunghezza')}"
+							th:text="#{label.obbligatorio}">Error </span>
+					</div>
+
+					<div class="form-group">
+						<label for="larghezza" class="col-sm-2 col-lg-2 control-label">Larghezza</label>
+						<div class="col-sm-5 col-lg-2">
+							<input type="text" class="form-control" id="larghezza"
+								placeholder="Inserisci la larghezza..." th:field="*{larghezza}" />
+						</div>
+					</div>
+					<div>
+						<span th:if="${#fields.hasErrors('larghezza')}"
+							th:text="#{label.obbligatorio}">Error </span>
+					</div>
+
+					<div class="form-group">
+						<label for="sito" class="col-sm-2 col-lg-2 control-label">Sito</label>
+						<div class="col-sm-5 col-lg-2">
+							<input type="text" class="form-control" id="sito"
+								placeholder="Inserisci il sito..." th:field="*{sito}" />
+						</div>
+					</div>
+					<div>
+						<span th:if="${#fields.hasErrors('sito')}"
+							th:text="#{label.obbligatorio}">Error </span>
+					</div>
+
+
+					<div class="form-group">
+						<label for="autore" class="col-sm-2 col-lg-2 control-label">Autore</label>
+						<div class="col-sm-5 col-lg-2">
+							<input type="text" class="form-control" id="autore"
+								placeholder="Inserisci l'autore..." th:field="*{autore}" />
+						</div>
+						<div>
+							<span th:if="${#fields.hasErrors('autore')}"
+								th:text="#{label.obbligatorio}">Error </span>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-2 col-lg-2 col-sm-offset-2">
+							<button type="submit" class="btn btn-default">Invia</button>
+						</div>
+					</div>
+
+					<a href="/">Torna all'Homepage</a>
+				</fieldset>
+			</form>
+
+
+		</div>
+	</div>
 
 </body>
 </html>
