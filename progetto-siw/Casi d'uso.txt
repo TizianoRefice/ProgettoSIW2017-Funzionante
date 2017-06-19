@@ -1,19 +1,44 @@
-Casi d�uso: 
+Casi d'uso: 
 
-Caso d�uso UC1: Login di un utente del sistema � Attore primario: un utente del sistema.
+Caso d'uso UC1: Login di un utente del sistema - Attore primario: un utente del sistema.
 Scenario principale di successo:
-1.	Un utente vuole navigare nella galleria d�arte.
-2.	L�utente apre la Homepage della galleria.
-2.	L�utente seleziona "Accedi o Registrati". Il sistema mostra la pagina di accesso.
-3.	L�utente immette i suoi dati nella form e invia la richiesta. Il sistema lo autentica e mostra la pagina per la 
+1.	Un utente vuole navigare nella galleria d'arte.
+2.	L'utente apre la Homepage della galleria.
+2.	L'utente seleziona "Accedi o Registrati". Il sistema mostra la pagina di accesso.
+3.	L'utente immette i suoi dati nella form e invia la richiesta. Il sistema lo autentica e mostra la pagina per la 
 	navigazione nella galleria.
 NB: Analogamente accade per un amministratore
 
-Caso d�uso UC2: Inserimento nuove opere � Attore primario: un admin del sistema
+Caso d'uso UC2: Inserimento nuove opere - Attore primario: un admin del sistema
 Scenario principale di successo:
 1.	Un admin vuole inserire una nuova opera nel sistema.
-2.	L�admin inserisce il suo username e la sua password. Il sistema autentica l�admin e mostra la pagina di gestione della galleria.
-3.	L�admin seleziona �inserisci nuova opera�. Il sistema mostra la pagina di inserimento dati dell�opera.
-4.	L�admin inserisce i dati richiesti e invia la richiesta.
+2.	L'admin inserisce il suo username e la sua password. Il sistema autentica l'admin e mostra la pagina di gestione della galleria.
+3.	L'admin seleziona "inserisci nuova opera". Il sistema mostra la pagina di inserimento dati dell'opera.
+4.	L'admin inserisce i dati richiesti e invia la richiesta.
 5.	Il sistema mostra i dati dell'opera inserita.
-NB: Analogamente accade per l'inserimento di un nuovo Autore 
+NB: Analogamente accade per l'inserimento di un nuovo Autore
+
+Caso d'uso UC3: Cancellazione opere inserite - Attore primario: un admin del sistema
+Scenario principale di successo:
+1.	Un admin vuole cancellare un'opera inserita in precedenza
+2.	L'admin inserisce username e password. Il sistema lo autentica e mostra la pagina di gestione della galleria.
+3.	L'admin seleziona "lista opere". Il sistema mostra la pagina con la lista delle opere registrate.
+4.	L'admin fa clic su "cancella". Il sistema rimuove l'opera dal database e ritorna la pagina con la lista delle opere.
+NB: Analogamente accade per la rimozione di un Autore già inserito.
+
+Caso d'uso UC4: Visualizzazione opere presenti in galleria – Attore primario: un utente del sistema.
+Scenario principale di successo:
+1.	Un utente vuole visualizzare le opere presenti nella galleria.
+2.	L’utente fa login nel sistema. (caso d'uso UC1) 
+3.	L'utente seleziona "lista opere" dal menù per la navigazione in galleria.
+4.	Il sistema mostra la lista delle opere presenti nel sistema. 
+5. 	L'utente, volendo, può selezionare un'opera: il sistema mostra le informazioni relative all'opera.
+NB: Analogamente accade per la visualizzazione degli autori registrati nel sistema
+
+Caso d'uso UC5: Visualizzazione della lista delle opere in base all'autore – Attore primario: un utente del sistema.
+Scenario principale di successo:
+1.	Un utente vuole visualizzare le opere presenti nella galleria in base all'autore.
+2.	L’utente fa login nel sistema. (caso d'uso UC1) 
+3.	L'utente seleziona "lista opere per autore" dal menù per la navigazione in galleria.
+4.	Il sistema mostra la lista degli autori. 
+5. 	L'utente preme il tasto "vedi opere". Il sistema mostra l'elenco delle opere relative all'autore selezionato. 
