@@ -1,19 +1,19 @@
-Casi d’uso: 
+Casi dï¿½uso: 
 
-Caso d’uso UC1: Login di un utente del sistema – Attore primario: un utente del sistema.
+Caso dï¿½uso UC1: Login di un utente del sistema ï¿½ Attore primario: un utente del sistema.
 Scenario principale di successo:
-1.	Un utente vuole navigare nella galleria d’arte.
-2.	L’utente apre la Homepage della galleria.
-2.	L’utente seleziona "Accedi o Registrati". Il sistema mostra la pagina di accesso.
-3.	L’utente immette i suoi dati nella form e invia la richiesta. Il sistema lo autentica e mostra la pagina per la 
+1.	Un utente vuole navigare nella galleria dï¿½arte.
+2.	Lï¿½utente apre la Homepage della galleria.
+2.	Lï¿½utente seleziona "Accedi o Registrati". Il sistema mostra la pagina di accesso.
+3.	Lï¿½utente immette i suoi dati nella form e invia la richiesta. Il sistema lo autentica e mostra la pagina per la 
 	navigazione nella galleria.
 NB: Analogamente accade per un amministratore
 
-Caso d’uso UC2: Inserimento nuove opere – Attore primario: un admin del sistema
+Caso dï¿½uso UC2: Inserimento nuove opere ï¿½ Attore primario: un admin del sistema
 Scenario principale di successo:
 1.	Un admin vuole inserire una nuova opera nel sistema.
-2.	L’admin inserisce il suo username e la sua password. Il sistema autentica l’admin e mostra la pagina di gestione della galleria.
-3.	L’admin seleziona “inserisci nuova opera”. Il sistema mostra la pagina di inserimento dati dell’opera.
-4.	L’admin inserisce i dati richiesti e invia la richiesta.
+2.	Lï¿½admin inserisce il suo username e la sua password. Il sistema autentica lï¿½admin e mostra la pagina di gestione della galleria.
+3.	Lï¿½admin seleziona ï¿½inserisci nuova operaï¿½. Il sistema mostra la pagina di inserimento dati dellï¿½opera.
+4.	Lï¿½admin inserisce i dati richiesti e invia la richiesta.
 5.	Il sistema mostra i dati dell'opera inserita.
-NB: Analogamente accade per l'inserimento di un nuovo Autore
+NB: Analogamente accade per l'inserimento di un nuovo Autore 
