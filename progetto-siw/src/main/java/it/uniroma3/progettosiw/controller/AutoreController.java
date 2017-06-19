@@ -74,10 +74,11 @@ public class AutoreController {
 		return "listaAutoriPerOpere";
 	}
 	
-	@GetMapping("/opereByAutore")
-	public String opereByAutore(@PathVariable Long id, Model model) {
-		Autore autore = this.autoreService.findById(id);
-		model.addAttribute("opereByAutore", autore.getOpereRealizzate());
-		return "opereByAutore";
-	}
+//	@GetMapping("/opereByAutore")
+//	public String opereByAutore(@PathVariable Long id, Model model) {
+//		Autore autore = this.autoreService.findById(id);
+//		model.addAttribute("opereByAutore", autore.getOpereRealizzate());
+//		return "opereByAutore";
+//	}
+
 }

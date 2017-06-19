@@ -49,12 +49,18 @@ p {
 div { text-align: center;
 	margin-top: 400px;}
 </style>
+
+<!-- Pagina che mostra un link per vedere le opere di un certo Autore -->
+
 <title>Lista Autori</title>
 </head>
 <body>
+<!-- itera su autori -->
 	<div th:each="autore : ${autori}">
+	<!-- trova l'autore in base all'id e stampa nome e cognome-->
 		<a th:href="@{autori/}+${autore.id}"
 			th:text="${autore.nome}+${autore.cognome}">Nome e Cognome</a>
+			<!-- contenuto visibile a soli amministratori -->
 		<div sec:authorize="hasRole('ROLE_ADMIN')">
 			<form th:action="opereByAutore" th:method="get">
 				<input type="submit" value="Vedi Opere" />
