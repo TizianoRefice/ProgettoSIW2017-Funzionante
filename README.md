@@ -6,8 +6,8 @@ Progetto Giugno 2017 - Sistemi Informativi su Web
 
 Schema base di dati(in <strong>grassetto</strong> la chiave):
 
-Autore(<strong>id</strong>, nome, cognome, nazionalita, dataNascita, dataMorte)
-
-Opera(<strong>id</strong>, titolo, anno, tecnica, lunghezza, larghezza, sito, autore_id)
-
+<li>
+  <ul Autore(<strong>id</strong>, nome, cognome, nazionalita, dataNascita, dataMorte) </ul>
+  <ul Opera(<strong>id</strong>, titolo, anno, tecnica, lunghezza, larghezza, sito, autore_id) </ul>
+</li>
 con vincolo di integrità referenziale tra <i>id</i>(di Autore) e <i>autore_id</i>
